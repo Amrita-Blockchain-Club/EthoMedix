@@ -1,6 +1,8 @@
 @import url(https://db.onlinewebfonts.com/c/23c0fcab84d99da0de762de7e220a6e1?family=Europa+Regular);
 @import url(https://db.onlinewebfonts.com/c/a96215c9d9ddf6f69b603c331081496e?family=ISOCTEUR+V1);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@100;200;300&display=swap");
+
 * {
   overflow-x: hidden;
 }
@@ -58,14 +60,8 @@
 }
 
 .about:hover {
-  color: white;
+  color: rgb(255, 0, 0);
   cursor: pointer;
-  padding-left: 5px;
-  padding-right: 5px;
-  height: 30px;
-  width: 71px;
-  border-radius: 10px;
-  background-color: #ff0000;
 }
 
 .contact {
@@ -81,13 +77,18 @@
   padding: 0;
 }
 
+.contact:hover {
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+}
+
 .connect-wallet {
   width: 200px;
   height: 30px;
   text-align: end;
   padding-right: 0.8%;
   display: flexbox;
-  background-color: crimson;
+  background-color: rgb(242, 53, 91);
   border-radius: 10px;
   font-size: 15px;
   font-family: "ISOCTEUR V1", sans-serif;
@@ -110,7 +111,7 @@
 }
 
 .connect-wallet:hover {
-  background-color: #ff0000;
+  background-color: rgb(255, 38, 81);
   cursor: pointer;
   color: white;
   box-shadow: 0 0 10px 0 rgba(218, 216, 216, 0.2);
@@ -150,11 +151,24 @@
   opacity: 0.6;
 }
 
+.secret-heading {
+  font-size: 60px;
+  font-family: "Raleway", sans-serif;
+  color: black;
+  position: absolute;
+  top: 56%;
+  left: 33%;
+  font-weight: 300;
+  line-height: 80px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
 .para1 {
   position: absolute;
-  top: 65%;
+  top: 66%;
   left: 5%;
-  border: 0.1px solid #000000;
+  border: 0.1px solid #d6d6d6;
   border-radius: 30px;
   width: 90%;
   height: 72%;
@@ -162,6 +176,11 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
+
+.para1:hover {
+  box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.2);
+}
+
 .para1-title {
   font-size: 40px;
   font-family: "Europa Regular", sans-serif;
@@ -181,7 +200,7 @@
   font-weight: 300;
   color: black;
   position: absolute;
-  top: 25%;
+  top: 21%;
   left: 5%;
   line-height: 40px;
   letter-spacing: 1.5px;
@@ -193,21 +212,22 @@
   position: absolute;
   top: 6%;
   left: 60%;
-  border: 0.1px solid #000000;
+  border: 0.1px solid #c5c5c5;
   border-radius: 30px;
   width: 34%;
 }
 
 .para2 {
   position: absolute;
-  top: 150%;
+  top: 151%;
   left: 5%;
-  border: 0.1px solid #000000;
+  border: 0.1px solid #d6d6d6;
   border-radius: 30px;
   width: 90%;
-  height: 72%;
+  height: 40%;
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: -1;
 }
 
 .para2-title {
@@ -229,10 +249,225 @@
   font-weight: 300;
   color: black;
   position: absolute;
+  top: 32%;
+  left: 5%;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  opacity: 0.6;
+}
+
+.image2 {
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  border: 0.1px solid #c5c5c5;
+  border-radius: 30px;
+  width: 34%;
+}
+
+.para3 {
+  position: absolute;
+  top: 205%;
+  left: 5%;
+  border: 0.1px solid #d6d6d6;
+  border-radius: 30px;
+  width: 90%;
+  height: 60%;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.para3-title {
+  font-size: 40px;
+  font-family: "Europa Regular", sans-serif;
+  color: black;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  line-height: 80px;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.para3-subtitle {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+  position: absolute;
+  top: 24%;
+  left: 5%;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  opacity: 0.6;
+}
+
+.image3 {
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  border: 0.1px solid #c5c5c5;
+  border-radius: 30px;
+  width: 34%;
+}
+
+.para4 {
+  position: absolute;
+  top: 279%;
+  left: 5%;
+  border: 0.1px solid #d6d6d6;
+  border-radius: 30px;
+  width: 90%;
+  height: 60%;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.para4-title {
+  font-size: 40px;
+  font-family: "Europa Regular", sans-serif;
+  color: black;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  line-height: 80px;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.para4-subtitle {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+  position: absolute;
   top: 25%;
   left: 5%;
   line-height: 40px;
   letter-spacing: 1.5px;
   word-spacing: 1px;
   opacity: 0.6;
+}
+
+.image4 {
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  border: 0.1px solid #c5c5c5;
+  border-radius: 30px;
+  width: 34%;
+}
+
+.para5 {
+  position: absolute;
+  top: 353%;
+  left: 5%;
+  border: 0.1px solid #d6d6d6;
+  border-radius: 30px;
+  width: 90%;
+  height: 80%;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.para5-title {
+  font-size: 40px;
+  font-family: "Europa Regular", sans-serif;
+  color: black;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  line-height: 80px;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.para5-subtitle {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+  position: absolute;
+  top: 21%;
+  left: 5%;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  opacity: 0.6;
+}
+
+.image5 {
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  border: 0.1px solid #c5c5c5;
+  border-radius: 30px;
+  width: 34%;
+}
+
+.para6 {
+  position: absolute;
+  top: 441%;
+  left: 5%;
+  border: 0.1px solid #d6d6d6;
+  border-radius: 30px;
+  width: 90%;
+  height: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.para6-title {
+  font-size: 40px;
+  font-family: "Europa Regular", sans-serif;
+  color: black;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  line-height: 80px;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.para6-subtitle {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  opacity: 0.6;
+}
+
+.image6 {
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  border: 0.1px solid #c5c5c5;
+  border-radius: 30px;
+  width: 34%;
+}
+
+.footer {
+  position: absolute;
+  top: 500%;
+  left: 0%;
+  width: 100%;
+  height: 2%;
+  background-color: #ffffff;
+  z-index: -1;
 }
