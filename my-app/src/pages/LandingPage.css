@@ -1,79 +1,238 @@
-@import url(https://db.onlinewebfonts.com/c/d6ae884b0a2f1a5346717fc160db2d28?family=Roobert);
+@import url(https://db.onlinewebfonts.com/c/23c0fcab84d99da0de762de7e220a6e1?family=Europa+Regular);
 @import url(https://db.onlinewebfonts.com/c/a96215c9d9ddf6f69b603c331081496e?family=ISOCTEUR+V1);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
 
 .navbar-container {
-  background-color: #fff;
-  border-bottom: 1px solid #e6e6e6;
+  border: 1px solid #000000;
+  transform: translate(1%, 10%);
+  border-radius: 30px;
   height: 80px;
+  width: 98%;
+  position: fixed;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(9.5px);
+}
+
+.slogan {
+  font-size: 50px;
+  font-family: "ISOCTEUR V1", sans-serif;
+  font-weight: 600;
+  color: black;
+  width: fit-content;
+  letter-spacing: -7px;
+  margin: 0;
+  padding: 0;
+  transform: translate(9%, 0);
+  line-height: 80px;
+}
+
+.about {
+  font-size: 20px;
+  font-family: "ISOCTEUR V1", sans-serif;
+  letter-spacing: 1rm;
+  font-weight: 600;
+  position: absolute;
+  right: 30%;
+  top: 35%;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.about:hover {
+  color: white;
+  cursor: pointer;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 30px;
+  width: 71px;
+  border-radius: 10px;
+  background-color: #ff0000;
+}
+
+.contact {
+  font-size: 20px;
+  font-family: "ISOCTEUR V1", sans-serif;
+  letter-spacing: 1rm;
+  font-weight: 600;
+  position: absolute;
+  right: 20%;
+  top: 35%;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.connect-wallet {
+  width: 200px;
+  height: 30px;
+  text-align: end;
+  padding-right: 0.8%;
+  display: flexbox;
+  background-color: crimson;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "ISOCTEUR V1", sans-serif;
+  letter-spacing: 1rm;
+  font-weight: 600;
+  position: absolute;
+  right: 4%;
+  top: 25%;
+  color: rgb(14, 14, 14);
+  margin: 0;
+  padding-top: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.fox {
+  position: absolute;
+  top: 25px;
+  left: 83%;
+  width: 30px;
+}
+
+.connect-wallet:hover {
+  background-color: #ff0000;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 0 10px 0 rgba(218, 216, 216, 0.2);
+}
+
+.body {
+  height: 100%;
   width: 100%;
-  position: fixed;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-  top: 0;
+  position: absolute;
+  top: 85px;
   left: 0;
-  z-index: 100;
-  position: fixed;
+  z-index: -1;
 }
 
-.slogan{
-    font-size: 50px;
-    font-family: 'ISOCTEUR V1', sans-serif;
-    font-weight: 600;
-    color: black;
-    margin: 0;
-    padding: 0;
-    transform: translate(2%, 0);
-    line-height: 80px;
+.title {
+  font-size: 40px;
+  font-family: "Europa Regular", sans-serif;
+  color: black;
+  transform: translate(60%, 100%);
+  line-height: 80px;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  opacity: 0.8;
 }
 
-.about{
-    font-size: 20px;
-    font-family: 'ISOCTEUR V1', sans-serif;
-    letter-spacing: 1rm;
-    font-weight: 600;
-    position: absolute;
-    right: 30%;
-    top: 35%;
-    color: black;
-    margin: 0;
-    padding: 0;
+.subtitle {
+  font-size: 25px;
+  font-family: "ISOCTEUR V1", sans-serif;
+  font-weight: 100;
+  color: black;
+  margin: 0;
+  padding: 0;
+  transform: translate(50%, 65%);
+  line-height: 40px;
+  letter-spacing: -5px;
+  text-align: left;
+  opacity: 0.6;
 }
 
-.contact{
-    font-size: 20px;
-    font-family: 'ISOCTEUR V1', sans-serif;
-    letter-spacing: 1rm;
-    font-weight: 600;
-    position: absolute;
-    right: 20%;
-    top: 35%;
-    color: black;
-    margin: 0;
-    padding: 0;
+.para1 {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+  border: 0.1px solid #000000;
+  border-radius: 30px;
+  width: 90%;
+  height: 72%;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+.para1-title {
+  font-size: 40px;
+  font-family: "Europa Regular", sans-serif;
+  color: black;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  line-height: 80px;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  opacity: 0.8;
 }
 
-.connect-wallet{
-    width: 200px;
-    height: 30px;
-    text-align: center;
-    display:flexbox;
-    background-color: crimson;
-    border-radius: 10px;
-    font-size: 15px;
-    font-family: 'ISOCTEUR V1', sans-serif;
-    letter-spacing: 1rm;
-    font-weight: 600;
-    position: absolute;
-    right: 5%;
-    top: 25%;
-    color: rgb(14, 14, 14);
-    margin: 0;
-    padding-top: 10px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+.para1-subtitle {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  opacity: 0.6;
 }
 
-.connect-wallet:hover{
-    background-color: #ff0000;
-    cursor: pointer;
-    color: white;
-    box-shadow: 0 0 10px 0 rgba(218, 216, 216, 0.2);
+.image1 {
+  position: absolute;
+  top: 6%;
+  left: 60%;
+  border: 0.1px solid #000000;
+  border-radius: 30px;
+  width: 34%;
+}
+
+.para2 {
+  position: absolute;
+  top: 150%;
+  left: 5%;
+  border: 0.1px solid #000000;
+  border-radius: 30px;
+  width: 90%;
+  height: 72%;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.para2-title {
+  font-size: 40px;
+  font-family: "Europa Regular", sans-serif;
+  color: black;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  line-height: 80px;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.para2-subtitle {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  line-height: 40px;
+  letter-spacing: 1.5px;
+  word-spacing: 1px;
+  opacity: 0.6;
 }
