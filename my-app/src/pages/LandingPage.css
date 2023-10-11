@@ -5,6 +5,7 @@
 
 * {
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -156,29 +157,26 @@
   font-family: "Raleway", sans-serif;
   color: black;
   position: absolute;
-  top: 56%;
+  top: 76%;
   left: 33%;
   font-weight: 300;
   line-height: 80px;
   letter-spacing: 3px;
   opacity: 0.8;
+  z-index: -1;
 }
 
 .para1 {
   position: absolute;
-  top: 66%;
+  top: 86%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
   width: 90%;
   height: 72%;
-  background-color: #ffffff;
+  background-color: #fffafa;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
-}
-
-.para1:hover {
-  box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.2);
 }
 
 .para1-title {
@@ -192,6 +190,7 @@
   letter-spacing: 3px;
   text-decoration: underline;
   opacity: 0.8;
+  background-color: transparent;
 }
 
 .para1-subtitle {
@@ -206,6 +205,7 @@
   letter-spacing: 1.5px;
   word-spacing: 1px;
   opacity: 0.6;
+  background-color: transparent;
 }
 
 .image1 {
@@ -219,7 +219,7 @@
 
 .para2 {
   position: absolute;
-  top: 151%;
+  top: 171%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -228,6 +228,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
+  background-color: #fffafa;
 }
 
 .para2-title {
@@ -241,6 +242,7 @@
   letter-spacing: 3px;
   text-decoration: underline;
   opacity: 0.8;
+  background-color: transparent;
 }
 
 .para2-subtitle {
@@ -255,6 +257,7 @@
   letter-spacing: 1.5px;
   word-spacing: 1px;
   opacity: 0.6;
+  background-color: transparent;
 }
 
 .image2 {
@@ -268,7 +271,7 @@
 
 .para3 {
   position: absolute;
-  top: 205%;
+  top: 225%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -277,6 +280,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
+  background-color: #fffafa;
 }
 
 .para3-title {
@@ -290,6 +294,7 @@
   letter-spacing: 3px;
   text-decoration: underline;
   opacity: 0.8;
+  background-color: transparent;
 }
 
 .para3-subtitle {
@@ -304,6 +309,7 @@
   letter-spacing: 1.5px;
   word-spacing: 1px;
   opacity: 0.6;
+  background-color: transparent;
 }
 
 .image3 {
@@ -317,7 +323,7 @@
 
 .para4 {
   position: absolute;
-  top: 279%;
+  top: 299%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -326,6 +332,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
+  background-color: #fffafa;
 }
 
 .para4-title {
@@ -339,6 +346,7 @@
   letter-spacing: 3px;
   text-decoration: underline;
   opacity: 0.8;
+  background-color: transparent;
 }
 
 .para4-subtitle {
@@ -353,6 +361,7 @@
   letter-spacing: 1.5px;
   word-spacing: 1px;
   opacity: 0.6;
+  background-color: transparent;
 }
 
 .image4 {
@@ -366,7 +375,7 @@
 
 .para5 {
   position: absolute;
-  top: 353%;
+  top: 373%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -375,6 +384,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
+  background-color: #fffafa;
 }
 
 .para5-title {
@@ -388,6 +398,7 @@
   letter-spacing: 3px;
   text-decoration: underline;
   opacity: 0.8;
+  background-color: transparent;
 }
 
 .para5-subtitle {
@@ -402,6 +413,7 @@
   letter-spacing: 1.5px;
   word-spacing: 1px;
   opacity: 0.6;
+  background-color: transparent;
 }
 
 .image5 {
@@ -415,7 +427,7 @@
 
 .para6 {
   position: absolute;
-  top: 441%;
+  top: 467%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -424,6 +436,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
+  background-color: #fffafa;
 }
 
 .para6-title {
@@ -437,6 +450,7 @@
   letter-spacing: 3px;
   text-decoration: underline;
   opacity: 0.8;
+  background-color: transparent;
 }
 
 .para6-subtitle {
@@ -451,6 +465,7 @@
   letter-spacing: 1.5px;
   word-spacing: 1px;
   opacity: 0.6;
+  background-color: transparent;
 }
 
 .image6 {
@@ -464,7 +479,7 @@
 
 .footer {
   position: absolute;
-  top: 500%;
+  top: 520%;
   left: 0%;
   width: 100%;
   height: 2%;

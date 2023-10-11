@@ -7,8 +7,12 @@ import image3 from "../assets/image3.jpeg";
 import image4 from "../assets/image4.jpeg";
 import image5 from "../assets/image5.jpg";
 import image6 from "../assets/image6.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const LandingPage = () => {
+  AOS.init();
+
   return (
     <div>
       <div className="navbar">
@@ -30,7 +34,11 @@ const LandingPage = () => {
           Secure, Transparent, and Efficient.
         </div>
       </div>
-      <div className="secret-heading">WHY ETHoMedix ??</div>
+      <div 
+      // data-aos="fade-up" data-aos-delay="300" 
+      className="secret-heading">
+        WHY ETHoMedix ??
+      </div>
       <div className="para1">
         <div className="para1-title">Enhanced Data Security</div>
         <div className="para1-subtitle">
