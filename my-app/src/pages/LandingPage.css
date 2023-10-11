@@ -1,0 +1,79 @@
+@import url(https://db.onlinewebfonts.com/c/d6ae884b0a2f1a5346717fc160db2d28?family=Roobert);
+@import url(https://db.onlinewebfonts.com/c/a96215c9d9ddf6f69b603c331081496e?family=ISOCTEUR+V1);
+
+.navbar-container {
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed;
+}
+
+.slogan{
+    font-size: 50px;
+    font-family: 'ISOCTEUR V1', sans-serif;
+    font-weight: 600;
+    color: black;
+    margin: 0;
+    padding: 0;
+    transform: translate(2%, 0);
+    line-height: 80px;
+}
+
+.about{
+    font-size: 20px;
+    font-family: 'ISOCTEUR V1', sans-serif;
+    letter-spacing: 1rm;
+    font-weight: 600;
+    position: absolute;
+    right: 30%;
+    top: 35%;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.contact{
+    font-size: 20px;
+    font-family: 'ISOCTEUR V1', sans-serif;
+    letter-spacing: 1rm;
+    font-weight: 600;
+    position: absolute;
+    right: 20%;
+    top: 35%;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.connect-wallet{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    display:flexbox;
+    background-color: crimson;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'ISOCTEUR V1', sans-serif;
+    letter-spacing: 1rm;
+    font-weight: 600;
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    color: rgb(14, 14, 14);
+    margin: 0;
+    padding-top: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+
+.connect-wallet:hover{
+    background-color: #ff0000;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 10px 0 rgba(218, 216, 216, 0.2);
+}
