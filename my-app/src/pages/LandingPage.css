@@ -2,27 +2,30 @@
 @import url(https://db.onlinewebfonts.com/c/a96215c9d9ddf6f69b603c331081496e?family=ISOCTEUR+V1);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@100;200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   overflow-x: hidden;
-  background-color: #ffffff;
+  background-color: #faf2ff;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+  background: linear-gradient(to bottom, #ec77ab 0%, #7873f5 100%);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #fff;
+  background: transparent;
 }
 
 .navbar-container {
-  border: 1px solid #000000;
+  border: 1px solid transparent;
   transform: translate(1%, 10%);
   border-radius: 30px;
   height: 80px;
@@ -31,77 +34,85 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .slogan {
-  font-size: 50px;
-  font-family: "ISOCTEUR V1", sans-serif;
-  font-weight: 600;
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   color: black;
   width: fit-content;
-  letter-spacing: -7px;
   margin: 0;
   padding: 0;
   transform: translate(9%, 0);
   line-height: 80px;
+  background: transparent;
+}
+
+.slogan:hover {
+  cursor: pointer;
 }
 
 .about {
   font-size: 20px;
-  font-family: "ISOCTEUR V1", sans-serif;
-  letter-spacing: 1rm;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   position: absolute;
   right: 30%;
   top: 35%;
   color: black;
   margin: 0;
   padding: 0;
+  background: transparent;
 }
 
 .about:hover {
-  color: rgb(255, 0, 0);
+  color: #6d41cd;
   cursor: pointer;
+  /* text-shadow: 0 0 2px 0 rgba(0, 0, 0, 1); */
 }
 
 .contact {
   font-size: 20px;
-  font-family: "ISOCTEUR V1", sans-serif;
-  letter-spacing: 1rm;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   position: absolute;
   right: 20%;
   top: 35%;
   color: black;
   margin: 0;
   padding: 0;
+  background: transparent;
 }
 
 .contact:hover {
-  color: rgb(255, 0, 0);
+  color: #6d41cd;
   cursor: pointer;
 }
 
 .connect-wallet-1 {
   width: 200px;
   height: 30px;
-  text-align: end;
-  padding-right: 0.8%;
+  text-align: center;
   display: flexbox;
-  background-color: rgb(22, 211, 88);
   border-radius: 10px;
-  font-size: 15px;
-  font-family: "ISOCTEUR V1", sans-serif;
-  letter-spacing: 1rm;
-  font-weight: 600;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   position: absolute;
+  background-color: #835adb83;
   right: 4%;
   top: 25%;
   color: rgb(14, 14, 14);
-  margin: 0;
-  padding-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.connect-wallet-1:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .connect-wallet {
@@ -110,16 +121,15 @@
   text-align: end;
   padding-right: 0.8%;
   display: flexbox;
-  background-color: rgb(242, 53, 91);
+  background-color: #835adb83;
   border-radius: 10px;
-  font-size: 15px;
-  font-family: "ISOCTEUR V1", sans-serif;
-  letter-spacing: 1rm;
-  font-weight: 600;
+  font-size: 19px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   position: absolute;
   right: 4%;
   top: 25%;
-  color: rgb(14, 14, 14);
+  color: black;
   margin: 0;
   padding-top: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -128,88 +138,86 @@
 .fox {
   position: absolute;
   top: 25px;
-  left: 83%;
+  left: 84.4vw;
   width: 30px;
+  background-color: transparent;
 }
 
 .connect-wallet:hover {
-  background-color: rgb(255, 38, 81);
+  background-color: #6730de83;
   cursor: pointer;
-  color: white;
-  box-shadow: 0 0 10px 0 rgba(218, 216, 216, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .body {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 85px;
   left: 0;
+  padding: 0px;
+  margin: 0px;
   z-index: -1;
 }
 
 .title {
   font-size: 40px;
-  font-family: "Europa Regular", sans-serif;
-  color: black;
-  transform: translate(60%, 100%);
+  font-family: "Montserrat", sans-serif;
+  color: rgb(31, 31, 31);
+  transform: translate(65%, 160%);
   line-height: 80px;
-  letter-spacing: 3px;
-  text-decoration: underline;
-  opacity: 0.8;
+
+  opacity: 0;
+  background: transparent;
 }
 
 .subtitle {
-  font-size: 25px;
-  font-family: "ISOCTEUR V1", sans-serif;
-  font-weight: 100;
-  color: black;
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: rgb(47, 47, 47);
   margin: 0;
-  padding: 0;
-  transform: translate(50%, 65%);
+  transform: translate(-5%, 60%);
   line-height: 40px;
-  letter-spacing: -5px;
-  text-align: left;
-  opacity: 0.6;
+  text-align: right;
+  opacity: 0.8;
+  background: transparent;
 }
 
 .secret-heading {
   font-size: 60px;
   font-family: "Raleway", sans-serif;
-  color: black;
+  color: white;
   position: absolute;
-  top: 76%;
+  top: 83%;
   left: 33%;
   font-weight: 300;
   line-height: 80px;
-  letter-spacing: 3px;
   opacity: 0.8;
-  z-index: -1;
+  z-index: 1;
+  background: transparent;
 }
 
 .para1 {
   position: absolute;
-  top: 86%;
+  top: 95%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
   width: 90%;
   height: 72%;
-  background-color: #fffafa;
+  background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
 
 .para1-title {
   font-size: 40px;
-  font-family: "Europa Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: black;
   position: absolute;
   top: 5%;
   left: 5%;
   line-height: 80px;
-  letter-spacing: 3px;
-  text-decoration: underline;
   opacity: 0.8;
   background-color: transparent;
 }
@@ -223,8 +231,6 @@
   top: 21%;
   left: 5%;
   line-height: 40px;
-  letter-spacing: 1.5px;
-  word-spacing: 1px;
   opacity: 0.6;
   background-color: transparent;
 }
@@ -240,7 +246,7 @@
 
 .para2 {
   position: absolute;
-  top: 171%;
+  top: 174%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -249,19 +255,17 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
-  background-color: #fffafa;
+  background-color: white;
 }
 
 .para2-title {
   font-size: 40px;
-  font-family: "Europa Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: black;
   position: absolute;
   top: 5%;
   left: 5%;
   line-height: 80px;
-  letter-spacing: 3px;
-  text-decoration: underline;
   opacity: 0.8;
   background-color: transparent;
 }
@@ -275,8 +279,6 @@
   top: 32%;
   left: 5%;
   line-height: 40px;
-  letter-spacing: 1.5px;
-  word-spacing: 1px;
   opacity: 0.6;
   background-color: transparent;
 }
@@ -292,7 +294,7 @@
 
 .para3 {
   position: absolute;
-  top: 225%;
+  top: 221%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -301,19 +303,17 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
-  background-color: #fffafa;
+  background-color: white;
 }
 
 .para3-title {
   font-size: 40px;
-  font-family: "Europa Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: black;
   position: absolute;
   top: 5%;
   left: 5%;
   line-height: 80px;
-  letter-spacing: 3px;
-  text-decoration: underline;
   opacity: 0.8;
   background-color: transparent;
 }
@@ -327,8 +327,6 @@
   top: 24%;
   left: 5%;
   line-height: 40px;
-  letter-spacing: 1.5px;
-  word-spacing: 1px;
   opacity: 0.6;
   background-color: transparent;
 }
@@ -344,7 +342,7 @@
 
 .para4 {
   position: absolute;
-  top: 299%;
+  top: 288%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -353,19 +351,17 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
-  background-color: #fffafa;
+  background-color: white;
 }
 
 .para4-title {
   font-size: 40px;
-  font-family: "Europa Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: black;
   position: absolute;
   top: 5%;
   left: 5%;
   line-height: 80px;
-  letter-spacing: 3px;
-  text-decoration: underline;
   opacity: 0.8;
   background-color: transparent;
 }
@@ -379,8 +375,6 @@
   top: 25%;
   left: 5%;
   line-height: 40px;
-  letter-spacing: 1.5px;
-  word-spacing: 1px;
   opacity: 0.6;
   background-color: transparent;
 }
@@ -396,7 +390,7 @@
 
 .para5 {
   position: absolute;
-  top: 373%;
+  top: 355%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -405,19 +399,17 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
-  background-color: #fffafa;
+  background-color: white;
 }
 
 .para5-title {
   font-size: 40px;
-  font-family: "Europa Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: black;
   position: absolute;
   top: 5%;
   left: 5%;
   line-height: 80px;
-  letter-spacing: 3px;
-  text-decoration: underline;
   opacity: 0.8;
   background-color: transparent;
 }
@@ -431,8 +423,6 @@
   top: 21%;
   left: 5%;
   line-height: 40px;
-  letter-spacing: 1.5px;
-  word-spacing: 1px;
   opacity: 0.6;
   background-color: transparent;
 }
@@ -448,7 +438,7 @@
 
 .para6 {
   position: absolute;
-  top: 467%;
+  top: 442%;
   left: 5%;
   border: 0.1px solid #d6d6d6;
   border-radius: 30px;
@@ -457,19 +447,17 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   z-index: -1;
-  background-color: #fffafa;
+  background-color: white;
 }
 
 .para6-title {
   font-size: 40px;
-  font-family: "Europa Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: black;
   position: absolute;
   top: 5%;
   left: 5%;
   line-height: 80px;
-  letter-spacing: 3px;
-  text-decoration: underline;
   opacity: 0.8;
   background-color: transparent;
 }
@@ -483,8 +471,6 @@
   top: 25%;
   left: 5%;
   line-height: 40px;
-  letter-spacing: 1.5px;
-  word-spacing: 1px;
   opacity: 0.6;
   background-color: transparent;
 }
@@ -500,10 +486,55 @@
 
 .footer {
   position: absolute;
-  top: 520%;
+  color: #000;
+  top: 510%;
   left: 0%;
   width: 100%;
-  height: 2%;
+  height: 20%;
   background-color: #ffffff;
-  z-index: -1;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.footer-about {
+  position: absolute;
+  color: #000;
+  top: 80%;
+  left: 0%;
+  width: 100%;
+  height: 20%;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.image7 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-title {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  line-height: 80px;
+  opacity: 0.8;
+  background-color: transparent;
+}
+
+.footer-subtitle {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+  line-height: 40px;
+  word-spacing: 1px;
+  opacity: 0.6;
+  background-color: transparent;
 }
