@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Web3 from 'web3';
 import fox from "../assets/Meta.png";
 import image1 from "../assets/image1.jpeg";
@@ -15,7 +15,11 @@ const LandingPage = () => {
   AOS.init();
   // address
   let [address, changeaddress] = useState("") ;
-  let [isempty, changeisEmpty] = useState( (address.length === 0) ? false : true) ;
+  let [isempty, changeisEmpty] = useState( (address.length === 0) ? true : false) ;
+
+  useEffect(() => {
+    address.length === 0 ? changeisEmpty(true) : changeisEmpty(false)
+  }, [address]) ;
 
   const connectingMetamask = () => {
     // we need to open the metamask to connect our wallet address
