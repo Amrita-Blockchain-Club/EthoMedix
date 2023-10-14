@@ -1,17 +1,52 @@
-import React from "react";
-import "./LandingPage.css";
-import image1 from "../assets/image1.jpeg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect, useState } from "react";
+import Web3 from 'web3';
 import fox from "../assets/Meta.png";
+import image1 from "../assets/image1.jpeg";
 import image2 from "../assets/image2.jpeg";
 import image3 from "../assets/image3.jpeg";
 import image4 from "../assets/image4.jpeg";
 import image5 from "../assets/image5.jpg";
 import image6 from "../assets/image6.jpg";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   AOS.init();
+  // address
+  let [address, changeaddress] = useState("") ;
+  let [isempty, changeisEmpty] = useState( (address.length === 0) ? true : false) ;
+
+  useEffect(() => {
+    address.length === 0 ? changeisEmpty(true) : changeisEmpty(false)
+  }, [address]) ;
+
+  const connectingMetamask = () => {
+    // we need to open the metamask to connect our wallet address
+    async function MetaMaskConnect(changeaddress) {
+      if (window.ethereum) {
+        try {
+          // Requesting to access the accounts in the meta mask
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+          console.log('MetaMask is connected');
+          // Now we can use the provider to interact with the blockchain
+          const web3 = new Web3(window.ethereum);
+          const accounts = await web3.eth.getAccounts();
+          const selectedAccount = accounts[0]; //* we are going to the first account in the metamask
+          console.log('Selected account:', selectedAccount);
+          //* adding this address to the state of the Application
+          changeaddress(selectedAccount) ;
+          // You can now perform other operations with the selected account
+        } catch (error) {
+          console.error('Error connecting to MetaMask:', error);
+        }
+      } else {
+        console.error('Please install MetaMask to use this feature');
+      }
+    }
+    MetaMaskConnect(changeaddress) ;
+    //* When the account was successfully connected then the button color will be changes to color green
+  }
 
   return (
     <div>
@@ -21,7 +56,7 @@ const LandingPage = () => {
           <div className="navbar-links">
             <div className="about">About</div>
             <div className="contact">Contact</div>
-            <div className="connect-wallet">Connect Wallet</div>
+            <div className={`${isempty ? 'connect-wallet' : 'connect-wallet-1'}`} onClick={connectingMetamask}>Connect Wallet</div>
             <img src={fox} className="fox" />
           </div>
         </div>

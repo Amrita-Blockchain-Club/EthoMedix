@@ -83,6 +83,27 @@
   cursor: pointer;
 }
 
+.connect-wallet-1 {
+  width: 200px;
+  height: 30px;
+  text-align: end;
+  padding-right: 0.8%;
+  display: flexbox;
+  background-color: rgb(22, 211, 88);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: "ISOCTEUR V1", sans-serif;
+  letter-spacing: 1rm;
+  font-weight: 600;
+  position: absolute;
+  right: 4%;
+  top: 25%;
+  color: rgb(14, 14, 14);
+  margin: 0;
+  padding-top: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
 .connect-wallet {
   width: 200px;
   height: 30px;
