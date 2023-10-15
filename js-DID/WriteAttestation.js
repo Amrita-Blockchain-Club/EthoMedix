@@ -3,9 +3,9 @@ import {eas, provider} from './contract.js';
 
 eas.connect(provider);
 
-const schemaEncoder = new SchemaEncoder("string name, uint8 age, string gender, string nationality, string[] medicalhistory, string[] allergies");
+const schemaEncoder = new SchemaEncoder("address address, uint8 age, string gender, string nationality, string[] medicalhistory, string[] allergies");
 const encodedData = schemaEncoder.encodeData([
-  {name: "name", value: "EthoMedix", type: "string"},
+  {name: "address", value: "EthoMedix", type: "address"},
   {name: "age", value: 19, type: "uint8" },
   {name:"gender", value: "Male", type: "string"},
   {name:"nationality", value: "Indian", type: "string"},
@@ -13,7 +13,7 @@ const encodedData = schemaEncoder.encodeData([
   {name:"allergies", value: ["None"], type: "string"},
 ]);
 
-const schemaUID = "0x4674c00536e8ee07f8c02fc862fffbb70dd9e8acf213784100650d6c0c46cf36";
+const schemaUID = "0xb19e745c50f8c2ccbf8e1211407b4ed5832a253333fea4de1ce38a63d7c62de4";
 
 const tx = await eas.attest({
   schema: schemaUID,
