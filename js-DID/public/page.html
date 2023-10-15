@@ -1,0 +1,135 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <p>This is a basic HTML page.</p>
+    
+    <button id="connectButton">Connect to MetaMask</button>
+    <div id="walletAddresses"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("connectButton").addEventListener("click", async function () {
+          // Check if MetaMask is installed
+          if (typeof window.ethereum !== "undefined") {
+            // MetaMask is installed
+            const provider = window.ethereum;
+
+            try {
+              // Request access to the user's MetaMask accounts
+              await provider.request({ method: "eth_requestAccounts" });
+
+              // Get the current accounts
+              const accounts = await provider.request({ method: "eth_accounts" });
+
+              displayAccounts(accounts);
+            } catch (error) {
+              console.error("Error connecting to MetaMask:", error);
+              document.getElementById("walletAddresses").textContent = "Error connecting to MetaMask. Please check your MetaMask setup.";
+            }
+          } else {
+            // MetaMask is not installed
+            document.getElementById("walletAddresses").textContent = "MetaMask is not installed.";
+          }
+        });
+      });
+
+      function displayAccounts(accounts) {
+        const addressesDiv = document.getElementById("walletAddresses");
+        addressesDiv.innerHTML = "";
+
+        if (accounts.length > 0) {
+          addressesDiv.innerHTML = "<p>Wallet Addresses:</p>";
+          const ul = document.createElement("ul");
+
+          accounts.forEach((account, index) => {
+            const li = document.createElement("li");
+            li.textContent = `${index}: ${account}`;
+            ul.appendChild(li);
+          });
+
+          addressesDiv.appendChild(ul);
+        } else {
+          addressesDiv.textContent = "No accounts found.";
+        }
+      }
+    </script>
+  </body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <title>My Page</title>
+   </head>
+   <body>
+     <h1>Hello, world!</h1>
+     <p>This is a basic HTML page.</p>
+ 
+     <button id="connectButton">Connect to MetaMask</button>
+     <div id="walletAddresses"></div>
+ 
+     <form id="addressForm">
+       <input type="hidden" name="account" id="accountInput" value="">
+       <input type="submit" value="Submit Address">
+     </form>
+ 
+     <script>
+       document.addEventListener("DOMContentLoaded", function () {
+         document.getElementById("connectButton").addEventListener("click", async function () {
+           // Check if MetaMask is installed
+           if (typeof window.ethereum !== "undefined") {
+             // MetaMask is installed
+             const provider = window.ethereum;
+ 
+             try {
+               // Request access to the user's MetaMask accounts
+               await provider.request({ method: "eth_requestAccounts" });
+ 
+               // Get the current accounts
+               const accounts = await provider.request({ method: "eth_accounts" });
+ 
+               // Display the account
+               const accountInput = document.getElementById("accountInput");
+               accountInput.value = accounts[0];
+ 
+               // Display the account for the user
+               displayAccounts(accounts);
+             } catch (error) {
+               console.error("Error connecting to MetaMask:", error);
+               document.getElementById("walletAddresses").textContent = "Error connecting to MetaMask. Please check your MetaMask setup.";
+             }
+           } else {
+             // MetaMask is not installed
+             document.getElementById("walletAddresses").textContent = "MetaMask is not installed.";
+           }
+         });
+ 
+         function displayAccounts(accounts) {
+           const addressesDiv = document.getElementById("walletAddresses");
+           addressesDiv.innerHTML = "";
+ 
+           if (accounts.length > 0) {
+             addressesDiv.innerHTML = "<p>Wallet Addresses:</p>";
+             const ul = document.createElement("ul");
+ 
+             accounts.forEach((account, index) => {
+               const li = document.createElement("li");
+               li.textContent = `${index}: ${account}`;
+               ul.appendChild(li);
+             });
+ 
+             addressesDiv.appendChild(ul);
+           } else {
+             addressesDiv.textContent = "No accounts found.";
+           }
+         }
+       });
+     </script>
+   </body>
+ </html>
+ 
