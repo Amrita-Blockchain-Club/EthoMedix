@@ -54,17 +54,21 @@ const LandingPage = () => {
         <div className="navbar-container">
           <div className="slogan">ETHoMedix</div>
           <div className="navbar-links">
-            <Link to="/about" >
+            <Link to="/about">
               <div className="about">About</div>
             </Link>
-            <div className="contact">Contact</div>
-            <div
-              className={`${isempty ? "connect-wallet" : "connect-wallet-1"}`}
-              onClick={connectingMetamask}
-            >
-              {`${isempty ? "Connect Wallet" : "Connected"}`}
+            <Link to="/contact">
+              <div className="contact">Contact</div>
+            </Link>
+            <div class="connect-box">
+              <div
+                className={`${isempty ? "connect-wallet" : "connect-wallet-1"}`}
+                onClick={connectingMetamask}
+              >
+                {`${isempty ? "Connect Wallet" : "Connected"}`}
+              </div>
+              <img src={fox} className={`${isempty ? "fox" : ""}`} />
             </div>
-            <img src={fox} className={`${isempty ? "fox" : ""}`} />
           </div>
         </div>
       </section>
@@ -72,7 +76,9 @@ const LandingPage = () => {
         <img src={image7} className="image7" />
         <div className="title">EthoMedix</div>
         <div className="subtitle">
-          This is a decentralized clinical trial platform that allows <br/> researchers to conduct clinical trials that are <br/> more secure, transparent, and efficient.
+          This is a decentralized clinical trial platform that allows <br />{" "}
+          researchers to conduct clinical trials that are <br /> more secure,
+          transparent, and efficient.
         </div>
       </div>
       <div

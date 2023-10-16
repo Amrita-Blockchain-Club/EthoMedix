@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.aboutpage{
+  background-color: white;
+}
+
+.about-para {
+  margin: 2% 10%;
+  width: 35%;
+  background: transparent;
+  height: 30.5%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background-color: rgba(224,212,248, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: absolute;
+  top: 14%;
+  left: -5%;
+  padding: 1%;
+  padding-bottom: 19.5%;
+  text-align: left;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+.about-bg {
+  z-index: -1;
+  position: absolute;
+  top: -2%;
+  left: 41%;
+  height: 100%;
+}
+
+.about-title{
+  
+}
