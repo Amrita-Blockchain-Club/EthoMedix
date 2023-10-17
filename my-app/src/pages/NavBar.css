@@ -30,9 +30,9 @@
   position: fixed;
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
   background: rgba(255, 255, 255, 0.25);
-  /* backdrop-filter: blur(10px); */
-  /* -webkit-backdrop-filter: blur(10px); */
-  /* z-index: 1; */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 3;
 }
 
 .slogan {

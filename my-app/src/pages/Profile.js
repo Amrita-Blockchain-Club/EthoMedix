@@ -4,10 +4,7 @@ import profile from "../assets/user.png";
 import user from "../assets/user.png";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-
-function handleProfileOnClick() {
-  document.getElementsByClassName("user-container").style.visibility = "hidden";
-}
+import bg from "../assets/profile-bg.png";
 
 const Profile = () => {
   var address = localStorage["address"];
@@ -15,10 +12,10 @@ const Profile = () => {
     <div>
       <Navbar address={address}/>
       <div className="profile-page">
-        <div className="user-bg-image"></div>
-        <div className="profile-container">
-          <div className="profile-details"></div>
-        </div>
+          <img src={bg} className="user-bg-image" />
+        <img src={user} className="user-image" />
+        <div className="user-name-profile">Unknown</div>
+        <div className="user-address-profile">{address}</div>
       </div>
     </div>
   );

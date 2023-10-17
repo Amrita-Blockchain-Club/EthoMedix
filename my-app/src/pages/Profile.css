@@ -33,6 +33,16 @@
   transform: translate(33%, 15%);
 }
 
+.profile-page {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
 .profile-container {
   width: 12vw;
   height: 2.2vw;
@@ -40,4 +50,49 @@
 
 .user-container-profile {
   z-index: 2;
+}
+
+.user-bg-image{
+  height: 40vh;
+  width: 101vw;
+  opacity: 0.65;
+  z-index: -5;
+  margin: -1%;
+  padding-bottom: -1%;
+}
+
+.user-image{
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  z-index: 1;
+  background: #faf2ff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.user-name-profile{
+  font-size: 2.5vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #333;
+  position: absolute;
+  background: transparent;
+  left: 4%;
+  top: 42%;
+  z-index: 1;
+}
+
+.user-address-profile{
+  font-size: 1vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #333;
+  position: absolute;
+  background: transparent;
+  left: 4%;
+  top: 50%;
+  z-index: 1;
 }
