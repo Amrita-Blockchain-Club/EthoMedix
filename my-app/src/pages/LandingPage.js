@@ -10,68 +10,13 @@ import image6 from "../assets/image6.jpg";
 import "./LandingPage.css";
 import image7 from "../assets/image7.jpg";
 import image8 from "../assets/image8.jpg";
-import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import Profile from "./Profile";
 
 const LandingPage = () => {
-  // address
-  let [address, changeaddress] = useState("");
-  let [isempty, changeisEmpty] = useState(address.length === 0 ? true : false);
-
-  useEffect(() => {
-    address.length === 0 ? changeisEmpty(true) : changeisEmpty(false);
-  }, [address]);
-
-  const connectingMetamask = () => {
-    // we need to open the metamask to connect our wallet address
-    async function MetaMaskConnect(changeaddress) {
-      if (window.ethereum) {
-        try {
-          // Requesting to access the accounts in the meta mask
-          await window.ethereum.request({ method: "eth_requestAccounts" });
-          console.log("MetaMask is connected");
-          // Now we can use the provider to interact with the blockchain
-          const web3 = new Web3(window.ethereum);
-          const accounts = await web3.eth.getAccounts();
-          const selectedAccount = accounts[0]; //* we are going to the first account in the metamask
-          console.log("Selected account:", selectedAccount);
-          //* adding this address to the state of the Application
-          changeaddress(selectedAccount);
-          // You can now perform other operations with the selected account
-        } catch (error) {
-          console.error("Error connecting to MetaMask:", error);
-        }
-      } else {
-        console.error("Please install MetaMask to use this feature");
-      }
-    }
-    MetaMaskConnect(changeaddress);
-    //* When the account was successfully connected then the button color will be changes to color green
-  };
-
   return (
     <div>
-      <section className="navbar">
-        <div className="navbar-container">
-          <div className="slogan">ETHoMedix</div>
-          <div className="navbar-links">
-            <Link to="/about">
-              <div className="about">About</div>
-            </Link>
-            <Link to="/contact">
-              <div className="contact">Contact</div>
-            </Link>
-            <div class="connect-box">
-              <div
-                className={`${isempty ? "connect-wallet" : "connect-wallet-1"}`}
-                onClick={connectingMetamask}
-              >
-                {`${isempty ? "Connect Wallet" : "Connected"}`}
-              </div>
-              <img src={fox} className={`${isempty ? "fox" : ""}`} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Navbar />
       <div className="body">
         <img src={image7} className="image7" />
         <div className="title">EthoMedix</div>
@@ -81,12 +26,7 @@ const LandingPage = () => {
           transparent, and efficient.
         </div>
       </div>
-      <div
-        // data-aos="fade-up" data-aos-delay="300"
-        className="secret-heading"
-      >
-        WHY ETHoMedix ??
-      </div>
+      <div className="secret-heading">WHY ETHoMedix ??</div>
       <div className="para1">
         <div className="para1-title">Enhanced Data Security</div>
         <div className="para1-subtitle">

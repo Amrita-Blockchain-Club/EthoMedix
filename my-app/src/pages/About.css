@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-}
-
-.aboutpage{
-  background-color: white;
 }
 
 .about-para {
@@ -14,9 +11,8 @@
   width: 35%;
   background: transparent;
   height: 30.5%;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  background-color: rgba(224,212,248, 0.5);
+  border-radius: 25px;
+  background-color: rgba(233, 225, 249, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: absolute;
@@ -26,11 +22,11 @@
   padding-bottom: 19.5%;
   text-align: left;
   font-size: 25px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand", sans-serif !important;
   font-weight: 400;
   color: #333;
   margin-bottom: 1rem;
-  z-index: 1;
+  z-index: -1;
 }
 
 .about-bg {
@@ -38,9 +34,16 @@
   position: absolute;
   top: -2%;
   left: 41%;
-  height: 100%;
+  height: 98.5%;
 }
 
-.about-title{
-  
+.about-title {
+  font-size: 60px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  color: #333;
+  position: absolute;
+  background: transparent;
+  left: 8%;
+  top: 22%;
 }

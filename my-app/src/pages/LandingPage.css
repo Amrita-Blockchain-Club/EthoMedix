@@ -24,131 +24,6 @@
   background: transparent;
 }
 
-.navbar-container {
-  border: 1px solid transparent;
-  transform: translate(1%, 10%);
-  border-radius: 30px;
-  height: 80px;
-  width: 98%;
-  position: fixed;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.slogan {
-  font-size: 40px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  color: black;
-  width: fit-content;
-  margin: 0;
-  padding: 0;
-  transform: translate(9%, 0);
-  line-height: 80px;
-  background: transparent;
-}
-
-.slogan:hover {
-  cursor: pointer;
-}
-
-.about {
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  position: absolute;
-  right: 30%;
-  top: 35%;
-  color: black;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-}
-
-.about:hover {
-  color: #6d41cd;
-  cursor: pointer;
-  /* text-shadow: 0 0 2px 0 rgba(0, 0, 0, 1); */
-}
-
-.contact {
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  position: absolute;
-  right: 20%;
-  top: 35%;
-  color: black;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-}
-
-.contact:hover {
-  color: #6d41cd;
-  cursor: pointer;
-}
-
-.connect-wallet-1 {
-  width: 200px;
-  height: 30px;
-  text-align: center;
-  display: flexbox;
-  border-radius: 10px;
-  font-size: 25px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  position: absolute;
-  background-color: #835adb83;
-  right: 4%;
-  top: 25%;
-  color: rgb(14, 14, 14);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-.connect-wallet-1:hover {
-  cursor: pointer;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-}
-
-.connect-wallet {
-  width: 200px;
-  height: 30px;
-  text-align: end;
-  padding-right: 0.8%;
-  display: flexbox;
-  background-color: #835adb83;
-  border-radius: 10px;
-  font-size: 19px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  position: absolute;
-  right: 4%;
-  top: 25%;
-  color: black;
-  margin: 0;
-  padding-top: 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-.fox {
-  position: absolute;
-  top: 26px;
-  left: 84.4vw;
-  width: 30px;
-  background-color: transparent;
-}
-
-.connect-wallet:hover {
-  background-color: #6730de83;
-  cursor: pointer;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-}
-
 .body {
   height: 100%;
   width: 100%;
@@ -165,13 +40,12 @@
   color: rgb(31, 31, 31);
   transform: translate(65%, 160%);
   line-height: 80px;
-
   opacity: 0;
   background: transparent;
 }
 
 .subtitle {
-  font-size: 28px;
+  font-size: 30px;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   color: rgb(47, 47, 47);
@@ -538,3 +412,275 @@
   opacity: 0.6;
   background-color: transparent;
 }
+
+@media (max-width : 768px) {
+  .navbar-container {
+    border: 1px solid transparent;
+    transform: translate(1%, 10%);
+    border-radius: 30px;
+    height: 80px;
+    width: 98%;
+    position: fixed;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .slogan {
+    font-size: 40px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: black;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    transform: translate(9%, 0);
+    line-height: 80px;
+    background: transparent;
+  }
+  
+  .slogan:hover {
+    cursor: pointer;
+  }
+  
+  .about {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    position: absolute;
+    right: 30%;
+    top: 35%;
+    color: black;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+  
+  .about:hover {
+    color: #6d41cd;
+    cursor: pointer;
+    /* text-shadow: 0 0 2px 0 rgba(0, 0, 0, 1); */
+  }
+  
+  .contact {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    position: absolute;
+    right: 20%;
+    top: 35%;
+    color: black;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+  
+  .contact:hover {
+    color: #6d41cd;
+    cursor: pointer;
+  }
+
+  .connect-wallet-1 {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    display: flexbox;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    position: absolute;
+    background-color: #835adb83;
+    right: 4%;
+    top: 25%;
+    color: rgb(14, 14, 14);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .connect-wallet-1:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .connect-wallet {
+    width: 200px;
+    height: 30px;
+    text-align: end;
+    padding-right: 0.8%;
+    display: flexbox;
+    background-color: #835adb83;
+    border-radius: 10px;
+    font-size: 19px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    position: absolute;
+    right: 4%;
+    top: 25%;
+    color: black;
+    margin: 0;
+    padding-top: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .fox {
+    position: absolute;
+    top: 26px;
+    left: 84.4vw;
+    width: 30px;
+    background-color: transparent;
+  }
+
+  .connect-wallet:hover {
+    background-color: #6730de83;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0px;
+    margin: 0px;
+    z-index: -1;
+  }
+
+  .title {
+    font-size: 40px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(31, 31, 31);
+    transform: translate(65%, 160%);
+    line-height: 80px;
+    opacity: 0;
+    background: transparent;
+  }
+
+  .subtitle {
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: rgb(47, 47, 47);
+    margin: 0;
+    transform: translate(-5%, 60%);
+    line-height: 40px;
+    text-align: right;
+    opacity: 0.8;
+    background: transparent;
+  }
+
+  .secret-heading {
+    font-size: 60px;
+    font-family: "Raleway", sans-serif;
+    color: white;
+    position: absolute;
+    top: 83%;
+    left: 37.3%;
+    font-weight: 300;
+    line-height: 80px;
+    opacity: 0.8;
+    z-index: 1;
+    background: transparent;
+  }
+
+  .para1 {
+    position: absolute;
+    top: 95%;
+    left: 5%;
+    border: 0.1px solid #d6d6d6;
+    border-radius: 30px;
+    width: 90%;
+    height: 72%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    background-color: white;
+  }
+
+  .para1-title {
+    font-size: 40px;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    line-height: 80px;
+    opacity: 0.8;
+    background-color: transparent;
+  }
+
+  .para1-subtitle {
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: black;
+    position: absolute;
+    top: 21%;
+    left: 5%;
+    line-height: 40px;
+    opacity: 0.6;
+    background-color: transparent;
+  }
+
+  .image1 {
+    position: absolute;
+    top: 6%;
+    left: 60%;
+    border: 0.1px solid #c5c5c5;
+    border-radius: 30px;
+    width: 34%;
+  }
+
+  .para2 {
+    position: absolute;
+    top: 174%;
+    left: 5%;
+    border: 0.1px solid #d6d6d6;
+    border-radius: 30px;
+    width: 90%;
+    height: 40%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    background-color: white;
+  }
+
+  .para2-title {
+    font-size: 40px;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    line-height: 80px;
+    opacity: 0.8;
+    background-color: transparent;
+  }
+
+  .para2-subtitle {
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: black;
+    position: absolute;
+    top: 32%;
+    left: 5%;
+    line-height: 40px;
+    opacity: 0.6;
+    background-color: transparent;
+  }
+
+  .image2 {
+    position: absolute;
+    top: 15%;
+    left: 60%;
+    border: 0.1px solid #c5c5c5;
+    border-radius: 30px;
+    width: 34%;
+  }
+
+}
+
