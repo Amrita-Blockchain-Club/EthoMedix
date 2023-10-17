@@ -10,15 +10,20 @@ import user from "../assets/user.png";
 const Profilego = () => {
   console.log("profile");
   return (
-    // <div className="user-container">
-    //   <p className="user-name">User</p>
-    //   <img src={user} className="user" />
-    // </div>
-    <Profile />
+    <div>
+      <Link
+        to="/profilepage"
+        className="user-container user-container-profile"
+      ></Link>
+      <div className="user-container">
+        <p className="user-name">User</p>
+        <img src={user} className="user" />
+      </div>
+    </div>
   );
 };
 
-function MetaMaskConnect() {
+function MetaMaskConnect(props) {
   let [address, changeaddress] = useState("");
   let [isempty, changeisEmpty] = useState(address.length === 0 ? true : false);
 
@@ -41,6 +46,7 @@ function MetaMaskConnect() {
           console.log("Selected account:", selectedAccount);
           //* adding this address to the state of the Application
           changeaddress(selectedAccount);
+          localStorage["address"] = selectedAccount;
           // You can now perform other operations with the selected account
         } catch (error) {
           console.error("Error connecting to MetaMask:", error);
@@ -76,40 +82,51 @@ function MetaMaskConnect() {
   }
 }
 
-const Navbar = () => {
-  const handleonclick = () => {
-    console.log("clicked");
-  };
-
-  return (
-    <div>
-      <section className="navbar">
-        <div className="navbar-container">
-          <Link to="/">
-            <div className="slogan">ETHoMedix</div>
-          </Link>
-          <div className="navbar-links">
-            <Link to="/about">
-              <div className="about">About</div>
+const Navbar = (props) => {
+  var address = props.address;
+  if (address === 0) {
+    return (
+      <div>
+        <section className="navbar">
+          <div className="navbar-container">
+            <Link to="/">
+              <div className="slogan">ETHoMedix</div>
             </Link>
-            <Link to="/contact">
-              <div className="contact">Contact</div>
-            </Link>
-            <MetaMaskConnect />
-            {/* <div
-              className={`${isempty ? "connect-wallet" : "connect-wallet-1"}`}
-              onClick={`${isempty ? connectingMetamask : handleonclick}`}
-            >
-              <p>{`${isempty ? "Connect Wallet" : "User"}`}</p>
+            <div className="navbar-links">
+              <Link to="/about">
+                <div className="about">About</div>
+              </Link>
+              <Link to="/contact">
+                <div className="contact">Contact</div>
+              </Link>
+              <MetaMaskConnect />
             </div>
-            <img src={fox} className={`${isempty ? "fox" : ""}`} />
-            <img src={user} className={`${isempty ? "nothing" : "user"}`}/>
-          </div> */}
           </div>
-        </div>
-      </section>
-    </div>
-  );
+        </section>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <section className="navbar">
+          <div className="navbar-container">
+            <Link to="/">
+              <div className="slogan">ETHoMedix</div>
+            </Link>
+            <div className="navbar-links">
+              <Link to="/about">
+                <div className="about">About</div>
+              </Link>
+              <Link to="/contact">
+                <div className="contact">Contact</div>
+              </Link>
+              <Profilego />
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 };
 
 export default Navbar;

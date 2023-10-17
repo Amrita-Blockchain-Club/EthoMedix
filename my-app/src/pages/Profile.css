@@ -19,6 +19,7 @@
   background-size: 40px;
   background-position: 10px;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .user-container:hover {
@@ -32,25 +33,11 @@
   transform: translate(33%, 15%);
 }
 
-.profile-container{
+.profile-container {
   width: 12vw;
   height: 2.2vw;
-  justify-content: end !important;
-  border-radius: 10px;
-  font-size: 1.25vw;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  position: absolute;
-  background-color: black;
-  right: 2vw;
-  top: 12%;
-  color: rgb(14, 14, 14);
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-bottom: 5px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  background-image: url(../assets/user.png);
-  background-size: 40px;
-  background-position: 10px;
-  background-repeat: no-repeat;
+}
+
+.user-container-profile {
+  z-index: 2;
 }

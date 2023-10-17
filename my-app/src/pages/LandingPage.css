@@ -413,7 +413,7 @@
   background-color: transparent;
 }
 
-@media (max-width : 768px) {
+@media (max-width: 768px) {
   .navbar-container {
     border: 1px solid transparent;
     transform: translate(1%, 10%);
@@ -426,7 +426,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
-  
+
   .slogan {
     font-size: 40px;
     font-family: "Montserrat", sans-serif;
@@ -439,11 +439,11 @@
     line-height: 80px;
     background: transparent;
   }
-  
+
   .slogan:hover {
     cursor: pointer;
   }
-  
+
   .about {
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
@@ -456,13 +456,13 @@
     padding: 0;
     background: transparent;
   }
-  
+
   .about:hover {
     color: #6d41cd;
     cursor: pointer;
     /* text-shadow: 0 0 2px 0 rgba(0, 0, 0, 1); */
   }
-  
+
   .contact {
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
@@ -475,7 +475,7 @@
     padding: 0;
     background: transparent;
   }
-  
+
   .contact:hover {
     color: #6d41cd;
     cursor: pointer;
@@ -681,6 +681,44 @@
     border-radius: 30px;
     width: 34%;
   }
-
 }
 
+.user-container {
+  width: 12vw;
+  height: 2.2vw;
+  justify-content: end !important;
+  border-radius: 10px;
+  font-size: 1.25vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  position: absolute;
+  background-color: #835adb83;
+  right: 2vw;
+  top: 12%;
+  color: rgb(14, 14, 14);
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-image: url(../assets/user.png);
+  background-size: 40px;
+  background-position: 10px;
+  background-repeat: no-repeat;
+  visibility: initial;
+}
+
+.user-container:hover {
+  background-color: #6730de83;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.user-container p {
+  background: transparent;
+  transform: translate(33%, 15%);
+}
+
+.profile-container {
+  width: 12vw;
+  height: 2.2vw;
+}
