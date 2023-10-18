@@ -3,6 +3,16 @@ const express = require("express");
 const session = require("express-session");
 const app = express();
 
+let encode_func;
+
+(async () => {
+  const module = await import("./WriteAttestation.js");
+  encode_func = module.encode_func;
+})();
+
+
+const schemaUID = "0x1bcef32b5833330fabc83aedea2c1edaa11b37e379d4fad695a3593fcf438a83";
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true })); // Middleware for parsing form data.
 app.use(session({
@@ -43,6 +53,10 @@ app.post("/test-submit", async function (req, res){
     const { age, gender, nationality, medicalHistory, allergies } = req.body;
 
     console.log(req.body);
+
+    const encode_data = await encode_func(req.session.account, age, gender, nationality, medicalHistory, allergies, schemaUID);
+    console.log("Encoded Data: ",encode_data);
+
     res.redirect("/test")
 
 });
