@@ -1,10 +1,17 @@
 import { EAS, SchemaEncoder } from "@ethereum-attestation-service/eas-sdk";
-import {eas, provider} from './contract.js';
+import {EAS_connection} from './contract.js';
 
 
 export async function encode_func(eth_address, age, gender, nationality, medicalhistory, allergies, schemaUID){
-
-      await eas.connect(provider);
+  try{
+    const provider = await EAS_connection();
+    const eas = new EAS(eth_address);
+    eas.connect(provider);
+  }catch(err){
+    console.log(err);
+    return err;
+  }
+    try{
       const schemaEncoder = new SchemaEncoder("address eth_address, uint8 age, string gender, string nationality, string[] medicalhistory, string[] allergies");
       const encodedData = schemaEncoder.encodeData([
         {name:"eth_address", value: eth_address, type: "address"},
@@ -16,8 +23,12 @@ export async function encode_func(eth_address, age, gender, nationality, medical
       ]);
 
       return encodedData;
-}
+    }catch(err){
+      console.log(err);
+      return err;
+    }
 
+}
 
 
 

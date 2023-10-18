@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ethereum Transaction Form</title>
+  <style>
+    /* CSS for form alignment */
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #0074cc;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ethereum Transaction Form</h1>
+  <p>Your Recipient ETH address is: <span id="account"><%= account %></span></p>
+  <p>Your Schema ID is: <span id="schemaUID"><%= schemaUID %></span></p>
+  <p>Your Encoded Data is: <span id="encoded_data"><%= encoded_data %></span></p>
+
+  <form id="transactionForm" action="/submit-transaction" method="post">
+
+    <button type="button" id="submitButton">Submit Transaction</button>
+  </form>
+
+  <div id="resultMessage"></div>
+
+  <script>
+    // Get the submit transaction button
+    const submitTransactionButton = document.getElementById("submitButton");
+
+    // Add a click listener to the submit transaction button
+    submitTransactionButton.addEventListener("click", async function() {
+      // Get the form data
+      const formData = new FormData(document.getElementById("transactionForm"));
+
+      // Send the form data to the Express app
+      const response = await fetch("/submit-transaction", {
+        method: "POST",
+        body: formData
+      });
+
+      // Display the result message
+      if (response.status === 200) {
+        document.getElementById("resultMessage").textContent = "Transaction submitted successfully!";
+      } else {
+        document.getElementById("resultMessage").textContent = "Error submitting the transaction.";
+      }
+    });
+  </script>
+</body>
+</html>

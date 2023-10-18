@@ -13,6 +13,7 @@ let encode_func;
 
 const schemaUID = "0x1bcef32b5833330fabc83aedea2c1edaa11b37e379d4fad695a3593fcf438a83";
 
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true })); // Middleware for parsing form data.
 app.use(session({
@@ -20,31 +21,30 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 })); // Middleware for session management
+
 app.use(express.json()); 
 
-app.set("view engine", "ejs"); // Set the view engine to EJS if not already set
+app.set("view engine", "ejs"); 
 
 app.get("/", (req, res) => {
     res.render("page.ejs");
 });
 
 app.post("/submit", (req, res) => {
-    const account = req.body.account; // Use req.body to access form data
+    const account = req.body.account; 
 
     if (account) {
         console.log("Received account address:", account);
     
-        req.session.account = account; // Store the account value in a session variable
-        res.redirect("/test"); // Redirect to the "test" endpoint
+        req.session.account = account; 
+        res.redirect("/test"); 
     } else {
-        // Handle the case when the "account" field is empty
-        res.sendStatus(400); // Bad Request
+        res.sendStatus(400); 
     }
 });
 
 app.get("/test", (req, res) => {
     const account = req.session.account; 
-    // Render the "test.ejs" page with the account value
     res.render("test.ejs", { account });
     
 });
@@ -54,11 +54,28 @@ app.post("/test-submit", async function (req, res){
 
     console.log(req.body);
 
-    const encode_data = await encode_func(req.session.account, age, gender, nationality, medicalHistory, allergies, schemaUID);
-    console.log("Encoded Data: ",encode_data);
+    const encoded_data = await encode_func(req.session.account, age, gender, nationality, medicalHistory, allergies, schemaUID);
 
-    res.redirect("/test")
+    req.session.encoded_data = encoded_data;
+    console.log("Encoded Data: ",req.session.encoded_data);
 
+    if (req.session.encoded_data){
+        res.redirect("/transaction");
+    }else{
+        res.sendStatus(400);
+        res.redirect("/test");
+    }
+
+});
+
+app.get("/transaction", (req, res) => {
+    res.render("transact.ejs",{account: req.session.account, schemaUID: schemaUID, encoded_data: req.session.encoded_data});
+    console.log("Transaction Done")
+});
+
+app.post("/submit-transaction", async function (req, res){
+    console.log("Transaction Done Submission");
+    res.sendStatus(200);
 });
 
 
