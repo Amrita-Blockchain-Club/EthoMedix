@@ -109,25 +109,25 @@
 <body>
   <h1>Ethereum Attestation Service</h1>
 
-  <form id="inputForm">
+  <form id="inputForm" action="/test-submit" method="post">
     <label for="ethAddress">Ethereum Address:</label>
-    <input type="text" id="ethAddress" placeholder="0xYourEthereumAddress" required>
-
+    <input type="text" id="ethAddress" name="ethAddress" placeholder="0xYourEthereumAddress" required>
+  
     <label for="age">Age:</label>
-    <input type="number" id="age" placeholder="Enter age" required>
-
+    <input type="number" id="age" name="age" placeholder="Enter age" required>
+  
     <label for="gender">Gender:</label>
-    <input type="text" id="gender" placeholder="Enter gender" required>
-
+    <input type="text" id="gender" name="gender" placeholder="Enter gender" required>
+  
     <label for="nationality">Nationality:</label>
-    <input type="text" id="nationality" placeholder="Enter nationality" required>
-
+    <input type="text" id="nationality" name="nationality" placeholder="Enter nationality" required>
+  
     <label for="medicalHistory">Medical History (comma-separated):</label>
-    <input type="text" id="medicalHistory" placeholder="Enter medical history">
-
+    <input type="text" id="medicalHistory" name="medicalHistory" placeholder="Enter medical history">
+  
     <label for="allergies">Allergies (comma-separated):</label>
-    <input type="text" id="allergies" placeholder="Enter allergies">
-
+    <input type="text" id="allergies" name="allergies" placeholder="Enter allergies">
+  
     <button type="button" id="submitButton">Submit Transaction</button>
   </form>
 
@@ -154,7 +154,7 @@
         };
   
         // Send the form data to your Express app
-        const response = await fetch("/submit", {
+        const response = await fetch("/test-submit", {
           method: "POST",
           body: JSON.stringify(formData),
           headers: {

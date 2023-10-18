@@ -31,7 +31,7 @@
  
              try {
                // Request access to the user's MetaMask accounts
-               await provider.request({ method: "eth_requestAccounts" });
+               await ethereum.request({ method: 'eth_requestAccounts' });
  
                // Get the current accounts
                const accounts = await provider.request({ method: "eth_accounts" });
