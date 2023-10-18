@@ -36,18 +36,19 @@ app.get("/test", (req, res) => {
     const account = req.session.account; 
     // Render the "test.ejs" page with the account value
     res.render("test.ejs", { account });
-    // console.log(account);
     
 });
 
 app.post("/test-submit", async function (req, res){
-    const { ethAddress, age, gender, nationality, medicalHistory, allergies } = req.body;
+    const { age, gender, nationality, medicalHistory, allergies } = req.body;
 
     console.log(req.body);
     res.redirect("/test")
 
 });
 
+
 app.listen(3000, () => {
     console.log("Listening on port 3000... 127.0.0.1:3000");
 });
+
