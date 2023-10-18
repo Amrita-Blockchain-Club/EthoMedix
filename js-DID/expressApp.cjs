@@ -69,7 +69,7 @@ app.post("/test-submit", async function (req, res){
 });
 
 app.get("/transaction", (req, res) => {
-    res.render("transact.ejs",{account: req.session.account, schemaUID: schemaUID, encoded_data: req.session.encoded_data});
+    res.render("transaction.ejs",{account: req.session.account, schemaUID: schemaUID, encoded_data: req.session.encoded_data});
     console.log("Transaction Done")
 });
 
@@ -81,5 +81,6 @@ app.post("/submit-transaction", async function (req, res){
 
 app.listen(3000, () => {
     console.log("Listening on port 3000... 127.0.0.1:3000");
+
 });
 
