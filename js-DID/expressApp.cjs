@@ -60,7 +60,7 @@ app.post("/test-submit", async function (req, res){
     console.log("Encoded Data: ",req.session.encoded_data);
 
     if (req.session.encoded_data){
-        res.redirect("/transaction");
+        res.sendStatus(200);
     }else{
         res.sendStatus(400);
         res.redirect("/test");

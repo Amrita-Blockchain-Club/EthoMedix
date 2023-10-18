@@ -82,6 +82,7 @@
   
         if (response.status === 200) {
           document.getElementById("resultMessage").textContent = "Transaction submitted successfully!";
+          window.location.href = "/transaction";
         } else {
           document.getElementById("resultMessage").textContent = "Error submitting the transaction.";
         }
