@@ -1,0 +1,133 @@
+.contact-page{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+.contact-page h1{
+    font-size: 3vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: #333;
+    position: absolute;
+    background: transparent;
+    left: 4%;
+    top: 10%;
+    z-index: 1;
+}
+
+.contact-form{
+    position: absolute;
+    top: 20%;
+    left: 4%;
+    width: 70%;
+    height: 75%;
+    background: #faf2ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.contact-name{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 10%;
+    background: transparent;
+    border: none;
+    /* border-bottom: 1px solid #333; */
+    font-size: 1.5vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #333;
+    outline: none;
+}
+
+.contact-name input{
+    width: 50%;
+    height: 45%;
+    font-size: 1.4vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: #333;
+    margin-left: 7%;
+    border-radius: 10px;
+    border:2px solid #333;
+    padding-left: 1%;
+}
+
+.contact-email{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    height: 10%;
+    background: transparent;
+    border: none;
+    /* border-bottom: 1px solid #333; */
+    font-size: 1.5vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #333;
+    outline: none;
+}
+
+.contact-email input{
+    width: 50%;
+    height: 45%;
+    font-size: 1.4vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: #333;
+    margin-left: 7.4%;
+    border-radius: 10px;
+    border:2px solid #333;
+}
+
+.contact-message{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    height: 40%;
+    background: transparent;
+    border: none;
+    font-size: 1.5vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #333;
+    outline: none;
+}
+
+.contact-message textarea{
+    width: 50%;
+    height: 45%;
+    font-size: 1.4vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: #333;
+    margin-left: 4%;
+    border-radius: 10px;
+    border:2px solid #333;
+}
+
+.contact-submit{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    width: 80%;
+    height: 10%;
+    border: none;
+    font-size: 1.5vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    background-color: #ad79ed;
+    border-radius: 10px;
+    color: #faf2ff;
+    cursor: pointer;
+}

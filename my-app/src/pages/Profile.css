@@ -96,3 +96,58 @@
   top: 50%;
   z-index: 1;
 }
+
+.user-balance-profile{
+  font-size: 1vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #333;
+  position: absolute;
+  background: transparent;
+  left: 4%;
+  top: 55%;
+  z-index: 1;
+}
+
+.user-did-profile{
+  font-size: 1vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #333;
+  position: absolute;
+  background: transparent;
+  left: 4%;
+  top: 60%;
+  z-index: 1;
+}
+
+.user-order-history{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #333;
+  position: absolute;
+  background: transparent;
+  left: 4%;
+  top: 65%;
+  z-index: 1;
+}
+
+.user-order-history h2{
+  margin-bottom: 1vw;
+  font-size: 1.6vw;
+  padding:  0.1vw 1vw;
+  border-radius: 10px;
+  height: max-content;
+  width: max-content;
+  background-color: #e6d2eb;
+  font-weight: 300;
+}
+
+.order-details{
+  display: flex;
+  font-size: 1.2vw;
+  width: 30vw;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-right: 15%;
+  margin-bottom: 0.2vw;}
