@@ -8,3 +8,5 @@ export async function EAS_connection(){
   );
   return provider;
 }
+
+

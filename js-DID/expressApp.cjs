@@ -1,13 +1,26 @@
+// file.js
+const { EAS } = require("@ethereum-attestation-service/eas-sdk");
 
 const express = require("express");
 const session = require("express-session");
 const app = express();
 
-let encode_func;
-
+let EAS_connection;
 (async () => {
-  const module = await import("./WriteAttestation.js");
-  encode_func = module.encode_func;
+    const module = await import("./contract.js");
+    EAS_connection = module.EAS_connection;
+})();
+
+let get_eas;
+(async () => {
+    const module = await import("./get_eas.js");
+    get_eas = module.get_eas;
+})();
+
+let encode_func;
+(async () => {
+    const module = await import("./WriteAttestation.js");
+    encode_func = module.encode_func;
 })();
 
 
@@ -69,8 +82,14 @@ app.post("/test-submit", async function (req, res){
 });
 
 app.get("/transaction", (req, res) => {
-    res.render("transaction.ejs",{account: req.session.account, schemaUID: schemaUID, encoded_data: req.session.encoded_data});
-    console.log("Transaction Done")
+
+    const eas = new EAS(req.session.account);
+    res.render("transaction.ejs",{
+        account: req.session.account, 
+        schemaUID: schemaUID, 
+        encoded_data: req.session.encoded_data, 
+        eas: {eas}
+    });
 });
 
 app.post("/submit-transaction", async function (req, res){
@@ -78,6 +97,39 @@ app.post("/submit-transaction", async function (req, res){
     res.sendStatus(200);
 });
 
+app.post("/eas", async function (req, res) {
+    try {
+      if (!req.session.account) {
+        // If account information is missing, return an error.
+        console.error("Error: Account information is missing.");
+        return res.sendStatus(400);
+      }
+  
+      // Ensure that the session data is fully available before proceeding.
+      await new Promise((resolve) => req.session.save(resolve));
+  
+      const eas = new EAS(req.session.account);
+      const provider = await EAS_connection();
+  
+      if (eas && provider) {
+        const responseData = {
+          eas: {eas},
+          provider: provider,
+        };
+        console.log("eas: ", typeof responseData.eas);
+  
+        res.json(responseData);
+      } else {
+        console.log("Error: EAS or provider is undefined.");
+        res.sendStatus(400);
+      }
+    } catch (err) {
+      console.error("Error while fetching EAS data:", err);
+      res.sendStatus(400);
+    }
+    console.log("eas Done");
+  });
+  
 
 app.listen(3000, () => {
     console.log("Listening on port 3000... 127.0.0.1:3000");

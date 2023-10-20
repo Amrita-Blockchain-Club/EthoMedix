@@ -30,8 +30,6 @@ export async function encode_func(eth_address, age, gender, nationality, medical
 
 }
 
-
-
 // const tx = await eas.attest({
 //   schema: schemaUID,
 //   data: {

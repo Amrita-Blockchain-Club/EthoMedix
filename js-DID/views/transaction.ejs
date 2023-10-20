@@ -32,19 +32,39 @@
   <p>Your Encoded Data is: <span id="encoded_data"><%= encoded_data %></span></p>
 
   <form id="transactionForm" action="/submit-transaction" method="post">
-
     <button type="button" id="submitButton">Submit Transaction</button>
   </form>
 
   <div id="resultMessage"></div>
-
   <script>
-    // Get the submit transaction button
+    const eas = document.getElementById("eas");
+    async function requestEASData() {
+    try {
+      const response = await fetch("/eas", {
+        method: "POST", 
+      });
+
+      if (response.status === 200) {
+        const { eas, provider } = await response.json();
+        // console.log("eas_address", typeof(eas));
+        // console.log("provider", typeof(provider));
+        return { eas, provider };
+      } else {
+        console.error("Error while fetching EAS data.");
+        return null;
+      }
+
+    } catch (error) {
+      console.error("Error during the request:", error);
+      return null;
+    }
+  }
+
     const submitTransactionButton = document.getElementById("submitButton");
 
-    // Add a click listener to the submit transaction button
+    
     submitTransactionButton.addEventListener("click", async function() {
-      // Get the form data
+     
       const formData = new FormData(document.getElementById("transactionForm"));
 
       // Send the form data to the Express app
@@ -56,6 +76,44 @@
       // Display the result message
       if (response.status === 200) {
         document.getElementById("resultMessage").textContent = "Transaction submitted successfully!";
+        // Check MetaMask availability
+        if (window.ethereum) {
+          try {
+
+            await window.ethereum.request({ method: "eth_requestAccounts" });
+            
+            const {eas, provider} = await requestEASData();
+
+            console.log("eas", eas);
+
+            eas.connect(provider);
+
+
+            const tx = await eas.attest({
+              schema: "<%= schemaUID %>",
+              data: {
+                recipient: "<%= account %>",
+                expirationTime: 0,
+                revocable: true,
+                data: "<%= encoded_data %>",
+              },
+            });
+
+            const web3 = new Web3(window.ethereum);
+            const response = await web3.eth.sendTransaction(tx);
+            const newAttestationUID = await tx.wait();
+            console.log("Transaction confirmed:", newAttestationUID.transactionHash);
+            console.log("Transaction sent:", response);
+
+          } catch (error) {
+            // Handle errors
+            console.error("Error while signing and sending the transaction:", error);
+          }
+        } else {
+          // Handle MetaMask not installed/enabled
+          console.error("MetaMask is not installed or not enabled.");
+        }
+
       } else {
         document.getElementById("resultMessage").textContent = "Error submitting the transaction.";
       }
