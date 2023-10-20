@@ -45,10 +45,10 @@
       });
 
       if (response.status === 200) {
-        const { eas, provider } = await response.json();
+        const { eas, provider, easConnect } = await response.json();
         // console.log("eas_address", typeof(eas));
         // console.log("provider", typeof(provider));
-        return { eas, provider };
+        return { eas, provider, easConnect };
       } else {
         console.error("Error while fetching EAS data.");
         return null;
@@ -82,11 +82,11 @@
 
             await window.ethereum.request({ method: "eth_requestAccounts" });
             
-            const {eas, provider} = await requestEASData();
+            const {eas, provider, easConnect} = await requestEASData();
 
             console.log("eas", eas);
-
-            eas.connect(provider);
+            console.log("provider", provider);
+            console.log("easConnect", easConnect);
 
 
             const tx = await eas.attest({

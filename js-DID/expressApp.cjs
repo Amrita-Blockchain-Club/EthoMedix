@@ -87,8 +87,7 @@ app.get("/transaction", (req, res) => {
     res.render("transaction.ejs",{
         account: req.session.account, 
         schemaUID: schemaUID, 
-        encoded_data: req.session.encoded_data, 
-        eas: {eas}
+        encoded_data: req.session.encoded_data,
     });
 });
 
@@ -115,6 +114,7 @@ app.post("/eas", async function (req, res) {
         const responseData = {
           eas: {eas},
           provider: provider,
+          easConnect : eas.connect(provider)
         };
         console.log("eas: ", typeof responseData.eas);
   
