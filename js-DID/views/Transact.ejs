@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ethereum Transaction Form</title>
+  <style>
+    /* CSS for form alignment */
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #0074cc;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ethereum Transaction Form</h1>
+  <p>Your Recipient ETH address is: <span id="account"><%= account %></span></p>
+  <p>Your Schema ID is: <span id="schemaUID"><%= schemaUID %></span></p>
+  <p>Your Encoded Data is: <span id="encoded_data"><%= encoded_data %></span></p>
+
+  <form id="transactionForm" action="/submit-transaction" method="post">
+    <button type="button" id="submitButton">Submit Transaction</button>
+  </form>
+
+  <div id="resultMessage"></div>
+
+  <script src="../get_eas.js">
+    console.log("Imported")
+  </script>
+  <script src="../contract.js">
+    console.log("Imported")
+  </script>
+
+  <script>
+    const submitTransactionButton = document.getElementById("submitButton");
+
+    submitTransactionButton.addEventListener("click", async function() {
+      const formData = new FormData(document.getElementById("transactionForm"));
+
+      // Send the form data to the Express app
+      const response = await fetch("/submit-transaction", {
+        method: "POST",
+        body: formData
+      });
+
+      // Display the result message
+      if (response.status === 200) {
+        document.getElementById("resultMessage").textContent = "Transaction submitted successfully!";
+        // Check MetaMask availability
+        if (window.ethereum) {
+          try {
+            await window.ethereum.request({ method: "eth_requestAccounts" });
+
+            // Import functions from external JavaScript files
+            // Make sure the paths are correct, and the files are accessible from your HTML.
+            const eas = get_eas("<%= account %>");
+            const provider = EAS_connection();
+            console.log("eas", eas);
+            console.log("provider", provider);
+            console.log("eas: ", typeof(eas), "provider: ", typeof(provider));
+            await eas.connect(provider);
+
+            const tx = await eas.attest({
+              schema: "<%= schemaUID %>",
+              data: {
+                recipient: "<%= account %>",
+                expirationTime: 0,
+                revocable: true,
+                data: "<%= encoded_data %>",
+              },
+            });
+
+            const web3 = new Web3(window.ethereum);
+            const response = await web3.eth.sendTransaction(tx);
+            const newAttestationUID = await tx.wait();
+            console.log("Transaction confirmed:", newAttestationUID.transactionHash);
+            console.log("Transaction sent:", response);
+          } catch (error) {
+            // Handle errors
+            console.error("Error while signing and sending the transaction:", error);
+          }
+        } else {
+          // Handle MetaMask not installed/enabled
+          console.error("MetaMask is not installed or not enabled.");
+        }
+      } else {
+        document.getElementById("resultMessage").textContent = "Error submitting the transaction.";
+      }
+    });
+  </script>
+</body>
+</html>
