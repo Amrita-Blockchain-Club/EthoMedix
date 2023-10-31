@@ -111,10 +111,11 @@ app.post("/test-submit", async function (req, res){
   
 //       if (eas && provider) {
 //         const responseData = {
-//           eas: {eas},
+//           eas: eas,
 //           provider: provider,
 //           easConnect : eas.connect(provider)
 //         };
+//         console.log("Attest Type: ",typeof(eas.attest));
 //         console.log("eas: ", typeof responseData.eas);
   
 //         res.json(responseData);
@@ -128,20 +129,35 @@ app.post("/test-submit", async function (req, res){
 //     }
 //     console.log("eas Done");
 //   });
-  
+
+async function makeAttestation(encodedData, schemaUID, public_key) {
+    try {
+        const module = await import('./signTx.js');
+        const { attest } = module;
+
+        const result = await attest(encodedData, schemaUID, public_key);
+        console.log("result: ", result);
+        return {
+            hash: result.hash,
+            uid: result.uid,
+        };
+    } catch (error) {
+        console.log(error);
+
+    }
+}
+
 app.get("/transaction", async (req, res) => {
     try {
-      const eas = new EAS(req.session.account);
-      const provider = await EAS_connection();
-      console.log("eas: ", typeof eas, "provider: ", typeof provider)
+
       res.render("Transact.ejs",{
           account: req.session.account, 
           schemaUID: schemaUID, 
           encoded_data: req.session.encoded_data,
-          eas: eas
       });
     } catch (error) {
       console.error(error);
+      console.log(error)
       res.status(500).send("Internal Server Error");
     }
   });
@@ -154,26 +170,21 @@ app.post("/submit-transaction", async function (req, res){
 app.post("/eas", async function (req, res) {
     try {
       if (!req.session.account) {
-        // If account information is missing, return an error.
+       
         console.error("Error: Account information is missing.");
         return res.sendStatus(400);
       }
+
+      const {hash, uid} = await makeAttestation(req.session.encoded_data, schemaUID, req.session.account);
   
-      // Ensure that the session data is fully available before proceeding.
-      await new Promise((resolve) => req.session.save(resolve));
-  
-      const eas = new EAS(req.session.account);
-      const provider = await EAS_connection();
-  
-      if (eas && provider) {
+      if (hash && uid) {
         const responseData = {
-          eas: {eas},
-          provider: provider,
-          easConnect : eas.connect(provider)
+          hash: hash,
+          uid: uid
         };
-        console.log("eas: ", typeof responseData.eas);
   
         res.json(responseData);
+
       } else {
         console.log("Error: EAS or provider is undefined.");
         res.sendStatus(400);
@@ -182,8 +193,9 @@ app.post("/eas", async function (req, res) {
       console.error("Error while fetching EAS data:", err);
       res.sendStatus(400);
     }
-    console.log("eas Done");
+    // console.log("eas Done");
   });
+
 
 app.listen(3000, () => {
     console.log("Listening on port 3000... 127.0.0.1:3000");

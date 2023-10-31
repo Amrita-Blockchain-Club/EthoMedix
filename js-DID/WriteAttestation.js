@@ -1,13 +1,12 @@
 import { EAS, SchemaEncoder } from "@ethereum-attestation-service/eas-sdk";
 import {EAS_connection} from './contract.js';
-import {test_file} from './test.js';
+// import {test_file} from './test.js';
 
 export async function encode_func(eth_address, age, gender, nationality, medicalhistory, allergies, schemaUID){
   try{
     const provider = await EAS_connection();
     const eas = new EAS(eth_address);
     eas.connect(provider);
-    await test_file(eas, provider);
   }catch(err){
     console.log(err);
     return err;
@@ -31,18 +30,3 @@ export async function encode_func(eth_address, age, gender, nationality, medical
 
 }
 
-
-await encode_func("0xBa28465C139C98c1E337F7d8832931f8AEa47f4f", 9, "Male", "Indian", ["Covid-19", "Malaria"], ["Peanuts"]);
-// const tx = await eas.attest({
-//   schema: schemaUID,
-//   data: {
-//     recipient: "0xBa28465C139C98c1E337F7d8832931f8AEa47f4f",
-//     expirationTime: 0,
-//     revocable: true, // Be aware that if your schema is not revocable, this MUST be false
-//     data: encodedData,
-//   },
-// });
-
-// const newAttestationUID = await tx.wait();
-
-// console.log("New attestation UID:", newAttestationUID);
